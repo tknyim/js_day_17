@@ -1,0 +1,75 @@
+<html>
+    <script>
+        let friendNames = ["Eugene","Linh","Jamie","Mai","TJ"]
+        friendNames.forEach(function(name){
+            console.log(name)
+        })
+        const callback = (item,index)=>{
+            console.log(`${index}. ${item}`)
+        }
+        // 
+        ["Eugene","Linh","Jamie","Mai","TJ"].forEach(callback)
+        // 
+        // let friendNames = ["Eugene","Linh","Jamie","Mai","TJ"]
+        // friendNames.forEach(callback)
+        // item 1
+        callback("Eugene",0)
+        //  item 2
+        callback("Linh",1)
+
+        let names = ["Eric","Derek","Mereik"]
+        const callback2 = (item,index)=>{
+            console.log(`${index}. ${item}`)
+        }
+        ["Eric","Derek","Mereik"].forEach(callback2)
+
+        const callback3 = (foo,bar,sourceArr)=>{
+            console.log(`${bar}. ${foo}`)
+        console.log(sourceArr)
+        }
+        friendNames.forEach(callback3)
+
+        //how it looks without using "forEach"
+        // for(let i = 0; 1 < friendNames.length; i++){
+        //     callback(friendNames[i], i, friendNames)
+        // }
+
+        // _________________________________________
+        // friendNames.forEach((name,idx) => console.log(`${name} is my friend ${idx}`))
+        
+        // _________________________________________
+        let template = {
+            name:null,
+            side:"light",
+            height:'normal'
+        }
+
+        // let newCallback = (name,idx) =>{
+            friendNames.forEach((name,idx) =>{
+            let res = Object.assign({}, template);
+            res.name = name;
+
+            if(name == "Linh" || name == "Mai"){
+                res.height = 'short'
+            } else if(name == "Eugene"){
+                res.height = "shorter"
+            }
+            name == "Mai" ? res.side = "Dark" : null
+            friendNames[idx] = res
+        })
+        // _________________________________________
+        // map
+        let results = friendNames.map((char,index) => {
+            return char.name
+        })
+        results = friendNames.map((char,index) =>{
+            return [char.name, index]
+        })
+        friendNames.map(name=>`${name} is a person`)
+
+        let out = Object.assign({name:"bob"}, {foo:"bar"})
+        let temp = {foo:"bar"}
+        let res = Object.assign(temp, {bar:"baz"})
+        Object.is(temp,res)
+    </script>
+</html>

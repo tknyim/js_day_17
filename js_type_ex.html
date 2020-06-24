@@ -1,0 +1,45 @@
+<html>
+    <script>
+        // 1. Write a function that will recieve a sentence as a string and return another string of only the letters that MATCH the requirement of being upper case JOINed together.
+        //      1.Hint you will be using a string method and an array method.
+        let firstString = "Hello, I am Eric"
+
+        replaceString = firstString.replace("Eric", "not Eric");
+        console.log(replaceString.toUpperCase())
+        
+
+        // 2. Write a function that will return the KEYS of an object as an array and have the array SORTed in alphebetical order.
+        let eric = {
+            name:"eric",
+            color:"blue",
+            title:"student",
+            pet: "dog"
+        }
+        let keys = Object.keys(eric)
+        console.log(keys.sort())
+        
+        // 3. Write a function that will accept an Array of numbers as a parameter and return the first number that it FINDs that is greater than a second parameter.
+        //      1.Hint I told you that you would see this on MDN.
+        // const arrayNumbers = [2, 16, 19, 44, 422];
+        // const arrFunc = arrayNumbers.find(element => element > 10);
+        // console.log(arrFunc);
+
+        let arrFunct = (arrayNumbers, num) => {
+            const arrFunc = arrayNumbers.find(element => element > num);
+            console.log(arrFunc);
+        }
+        arrFunct([1,2,3,4,12,42],15)
+
+        // const array1 = [5, 12, 8, 130, 44];
+        // const findFunc = (ar, compare) => ar.find(e=>e>compare);
+        // console.log(array1);
+        // array1(15)
+
+
+
+        // 4. Write a function that accepts 2 objects and returns a new object that is made up of the two objects.
+        //      1.The resulting object must not modify either of the two objects in the parameters.
+
+
+    </script>
+</html>
